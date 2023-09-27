@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLog.HangfireJobLogsTarget", "NLog.HangfireJobLogsTarget\NLog.HangfireJobLogsTarget.csproj", "{CA2AA722-0828-4E87-97CB-580B2913F4AB}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLog.HangfireJobLogsTarget.Tests", "NLog.HangfireJobLogsTarget.Tests\NLog.HangfireJobLogsTarget.Tests.csproj", "{460B9CEA-0971-409F-8DBF-185F14289B69}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{CA2AA722-0828-4E87-97CB-580B2913F4AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA2AA722-0828-4E87-97CB-580B2913F4AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA2AA722-0828-4E87-97CB-580B2913F4AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{460B9CEA-0971-409F-8DBF-185F14289B69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{460B9CEA-0971-409F-8DBF-185F14289B69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{460B9CEA-0971-409F-8DBF-185F14289B69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{460B9CEA-0971-409F-8DBF-185F14289B69}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

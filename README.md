@@ -1,16 +1,16 @@
-# NLog.HangfireLayouts
+# NLog.HangfireJobLogsTarget
 
-[![Latest version](https://img.shields.io/nuget/v/Bonura.NLog.HangfireLayouts.svg)](https://www.nuget.org/packages?q=Bonura.NLog.HangfireLayouts)
+[![Latest version](https://img.shields.io/nuget/v/Bonura.NLog.HangfireJobLogsTarget.svg)](https://www.nuget.org/packages?q=Bonura.NLog.HangfireJobLogsTarget)
 
-Few hangfire layouts to use with NLog logging library
+NLog target to send log message to Hangfire storage
 
 Installation
 -------------
 
-NLog.HangfireLayouts is available as a NuGet package. You can install it using the NuGet Package Console window:
+NLog.HangfireJobLogsTarget is available as a NuGet package. You can install it using the NuGet Package Console window:
 
 ```
-PM> Install-Package Bonura.NLog.HangfireLayouts
+PM> Install-Package Bonura.NLog.HangfireJobLogsTarget
 ```
 
 **First install and configure package: `Hangfire.PerformContextAccessor`**.
@@ -23,25 +23,26 @@ After installation, update your NLog settings:
 "NLog": {
   "extensions": [
     {
-      "assembly": "NLog.HangfireLayouts"
+      "assembly": "NLog.HangfireJobLogsTarget"
     }
   ]
 ```
 
 Layouts
 -------------
-* `hangfire-jobid` -> hangfire job id
+To store log message with jobId information and so make storage works correctly is mandatory to add a decorator to message layout.
+* `hangfire-decorator` -> add hangfire jobid to NLog log event properties (mandatory)
 
 Use
 -------------
-A simple message layout with jobid
+A simple target configuration
 
 
 ```json
 "targets": {
-  "console": {
-    "layout": "${longdate}|${level:uppercase=true}|${logger}|${message}|${hangfire-jobid}|${exception:format=toString}",
-    "type": "ColoredConsole"
+  "hangfire": {
+     "layout": "${longdate}|${level:uppercase=true}|${logger}|${message}|${exception:format=toString}${hangfire-decorator}",
+     "type": "HangfireJobLogs"
   }
 }
 ```
