@@ -2,7 +2,7 @@
 
 [![Latest version](https://img.shields.io/nuget/v/Bonura.NLog.HangfireJobLogsTarget.svg)](https://www.nuget.org/packages?q=Bonura.NLog.HangfireJobLogsTarget)
 
-NLog target to send log message to Hangfire storage
+NLog target to send log messages to Hangfire storage
 
 Installation
 -------------
